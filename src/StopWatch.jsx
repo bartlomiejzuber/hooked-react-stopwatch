@@ -89,11 +89,11 @@ class StopWatch extends Component {
                     convertedTimeValue = timeValue;
                 break;
             case "milliseconds":
-                if (timeValue < 10) 
+                if (timeValue < 10)
                     convertedTimeValue = "00" + timeValue;
-                else if (timeValue < 100) 
+                else if (timeValue < 100)
                     convertedTimeValue = "0" + timeValue;
-                else if (timeValue <= 999) 
+                else if (timeValue <= 999)
                     convertedTimeValue = timeValue;
                 break;
         }
