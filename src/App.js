@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <StopWatch/>
+        <StopWatch showIcons hideHours/>
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import './style.css';
+import PropTypes from 'prop-types'
 import moment from 'moment';
+import './style.css';
 
 class StopWatch extends Component {
     constructor(props) {
@@ -138,7 +139,7 @@ StopWatch.propTypes = {
     hideMinutes: PropTypes.bool, // Hide minutes
     hideSeconds: PropTypes.bool, // Hide seconds
     hideMilliseconds: PropTypes.bool, // Hide milliseconds
-    separators: PropTypes.ArrayOf(PropTypes.string) // Separators to use between hours/minutes/seconds/milliseconds
+    separators: PropTypes.arrayOf(PropTypes.string) // Separators to use between hours/minutes/seconds/milliseconds
     // separator use example: [":"/*separatorBetweenHoursAndMinutes*/, ":"/*separatorBetweenMinutesAndSeconds*/, "."/*separatorBetweenSecondsAndMilliseconds*/]
 };
 
