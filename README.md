@@ -6,7 +6,7 @@
 
 React component for simple stopwatch. Very extensible, provides many hooks so you can use it to develop any custom behavior that you desire.
 
-By default, there are is simple CSS style used!
+By default, there is simple CSS style used!
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
