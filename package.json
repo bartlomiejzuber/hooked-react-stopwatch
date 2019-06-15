@@ -1,7 +1,7 @@
 {
-  "name": "bjts-react-stopwatch",
-  "version": "0.1.0",
-  "private": true,
+  "name": "fancy-react-stopwatch",
+  "version": "1.0.4",
+  "private": false,
   "dependencies": {
     "moment": "^2.19.1",
     "react": "^16.0.0",

@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types'
 import moment from 'moment';
 import './style.css';
 
-class StopWatch extends Component {
+class StopWatch extends PureComponent {
     constructor(props) {
         super(props);
 
