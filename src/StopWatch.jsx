@@ -1,182 +1,171 @@
-import React, { PureComponent } from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
 import "./style.css";
 
-class StopWatch extends PureComponent {
-  constructor(props) {
-    super(props);
+const calculateTimeDiff = (startTime, pauseOffset) => {
+  let timeDiff = moment.duration(moment().diff(startTime));
+  if (pauseOffset) timeDiff = timeDiff.add(pauseOffset);
 
-    this.state = {
-      hours: 0,
-      minutes: 0,
-      seconds: 0,
-      milliseconds: 0,
+  return timeDiff;
+};
+const handleZerosPadding = (timeUnit, timeValue) => {
+  let convertedTimeValue;
 
-      pauseActive: false,
-      pauseOffset: 0
-    };
-
-    this.addZeros = this.addZeros.bind(this);
-    this.timeUpdate = this.timeUpdate.bind(this);
-    this.startBtnClick = this.startBtnClick.bind(this);
-    this.pauseBtnClick = this.pauseBtnClick.bind(this);
-    this.resetBtnClick = this.resetBtnClick.bind(this);
+  switch (timeUnit) {
+    case "hours":
+    case "minutes":
+      if (timeValue < 10) convertedTimeValue = "0" + timeValue;
+      else convertedTimeValue = timeValue;
+      break;
+    case "seconds":
+      if (timeValue < 10) convertedTimeValue = "0" + timeValue;
+      else convertedTimeValue = timeValue;
+      break;
+    case "milliseconds":
+      if (timeValue < 10) convertedTimeValue = "00" + timeValue;
+      else if (timeValue < 100) convertedTimeValue = "0" + timeValue;
+      else if (timeValue <= 999) convertedTimeValue = timeValue;
+      break;
   }
 
-  timeUpdate() {
-    let timeDiff = moment.duration(moment().diff(this.state.startTime));
-    if (this.state.pauseOffset) {
-      timeDiff = timeDiff.add(this.state.pauseOffset);
+  return convertedTimeValue;
+};
+const StopWatch = ({
+  showIcons,
+  hideHours,
+  hideMinutes,
+  hideSeconds,
+  hideMilliseconds,
+  separators
+}) => {
+  const [time, setTime] = useState({
+    startTime: null,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+    milliseconds: 0
+  });
+  const [pause, setPause] = useState({
+    active: false,
+    offset: 0
+  });
+  const intervalHandle = useRef({ timer: null });
+  const startBtnClick = useCallback(() => {
+    if (!intervalHandle.current.timer) {
+      const startTime = moment();
+      intervalHandle.current.timer = setInterval(() => {
+        console.log('test');
+        const timeDiff = calculateTimeDiff(startTime, pause.offset);
+        setTime({
+          ...time,
+          hours: timeDiff.hours(),
+          minutes: timeDiff.minutes(),
+          seconds: timeDiff.seconds(),
+          milliseconds: timeDiff.milliseconds()
+        });
+      }, 10);
     }
-
-    this.setState({
-      hours: timeDiff.hours(),
-      minutes: timeDiff.minutes(),
-      seconds: timeDiff.seconds(),
-      milliseconds: timeDiff.milliseconds()
-    });
-  }
-
-  startBtnClick() {
-    if (!this.state.timer) {
-      this.setState({
-        startTime: moment(),
-        timer: setInterval(this.timeUpdate, 10)
-      });
-    }
-  }
-
-  pauseBtnClick() {
-    if (this.state.timer) {
-      clearInterval(this.state.timer);
-      let durationToPauseClick = moment.duration(
-        moment().diff(this.state.startTime)
+  });
+  const pauseBtnClick = useCallback(() => {
+    if (intervalHandle.current.timer) {
+      clearInterval(intervalHandle.current.timer);
+      const durationToPauseClick = moment.duration(
+        moment().diff(time.startTime)
       );
-      this.setState({
-        pauseOffset: this.state.pauseOffset
-          ? this.state.pauseOffset.add(durationToPauseClick)
-          : durationToPauseClick,
-        timer: null
+      setPause({
+        active: true,
+        offset: durationToPauseClick
       });
     }
-  }
+  });
 
-  resetBtnClick() {
-    clearInterval(this.state.timer);
-    this.setState({
-      hours: 0,
-      minutes: 0,
-      seconds: 0,
-      milliseconds: 0,
+  useEffect(() => {
+    return () => clearInterval(intervalHandle.current.timer);
+  });
 
-      pauseOffset: null,
-      timer: null
-    });
-  }
+  // resetBtnClick() {
+  //   clearInterval(this.state.timer);
+  //   this.setState({
+  //     hours: 0,
+  //     minutes: 0,
+  //     seconds: 0,
+  //     milliseconds: 0,
 
-  addZeros(timeUnit, timeValue) {
-    let convertedTimeValue;
+  //     pauseOffset: null,
+  //     timer: null
+  //   });
+  // }
 
-    switch (timeUnit) {
-      case "hours":
-      case "minutes":
-        if (timeValue < 10) convertedTimeValue = "0" + timeValue;
-        else convertedTimeValue = timeValue;
-        break;
-      case "seconds":
-        if (timeValue < 10) convertedTimeValue = "0" + timeValue;
-        else convertedTimeValue = timeValue;
-        break;
-      case "milliseconds":
-        if (timeValue < 10) convertedTimeValue = "00" + timeValue;
-        else if (timeValue < 100) convertedTimeValue = "0" + timeValue;
-        else if (timeValue <= 999) convertedTimeValue = timeValue;
-        break;
-    }
-
-    return convertedTimeValue;
-  }
-
-  render() {
-    const {
-      showIcons,
-      hideHours,
-      hideMinutes,
-      hideSeconds,
-      hideMilliseconds,
-      separators
-    } = this.props;
-    return (
-      <div className="stopwatch">
-        <div className="time">
-          {!hideHours && [
-            <span key="hours" className="hours">
-              {this.addZeros("hours", this.state.hours)}
-            </span>,
-            <span key="separator_1" className="separator">
-              {(separators && separators[0]) || ":"}
-            </span>
-          ]}
-          {!hideMinutes && [
-            <span key="minutes" className="minutes">
-              {this.addZeros("minutes", this.state.minutes)}
-            </span>,
-            <span key="separator_2" className="separator">
-              {(separators && separators[1]) || ":"}
-            </span>
-          ]}
-          {!hideSeconds && [
-            <span key="seconds" className="seconds">
-              {this.addZeros("seconds", this.state.seconds)}
-            </span>,
-            <span key="separator_3" className="separator">
-              {(separators && separators[2]) || "."}
-            </span>
-          ]}
-          {!hideMilliseconds && (
-            <span className="milliseconds">
-              {this.addZeros("milliseconds", this.state.milliseconds)}
-            </span>
-          )}
-        </div>
-        <div className="controls">
-          {showIcons && [
-            <i
-              key="icon_1"
-              class="icon-play"
-              aria-hidden="true"
-              onClick={this.startBtnClick}
-            />,
-            <i
-              key="icon_2"
-              class="icon-pause"
-              aria-hidden="true"
-              onClick={this.pauseBtnClick}
-            />,
-            <i
-              key="icon_3"
-              class="icon-spinner"
-              aria-hidden="true"
-              onClick={this.resetBtnClick}
-            />
-          ]}
-          {!showIcons && [
-            <button key="btn_1" onClick={this.startBtnClick}>
-              Start
-            </button>,
-            <button key="btn_2" onClick={this.pauseBtnClick}>
-              Pause
-            </button>,
-            <button key="btn_3" onClick={this.resetBtnClick}>
-              Reset
-            </button>
-          ]}
-        </div>
+  return (
+    <div className="stopwatch">
+      <div className="time">
+        {!hideHours && [
+          <span key="hours" className="hours">
+            {handleZerosPadding("hours", time.hours)}
+          </span>,
+          <span key="separator_1" className="separator">
+            {(separators && separators[0]) || ":"}
+          </span>
+        ]}
+        {!hideMinutes && [
+          <span key="minutes" className="minutes">
+            {handleZerosPadding("minutes", time.minutes)}
+          </span>,
+          <span key="separator_2" className="separator">
+            {(separators && separators[1]) || ":"}
+          </span>
+        ]}
+        {!hideSeconds && [
+          <span key="seconds" className="seconds">
+            {handleZerosPadding("seconds", time.seconds)}
+          </span>,
+          <span key="separator_3" className="separator">
+            {(separators && separators[2]) || "."}
+          </span>
+        ]}
+        {!hideMilliseconds && (
+          <span className="milliseconds">
+            {handleZerosPadding("milliseconds", time.milliseconds)}
+          </span>
+        )}
       </div>
-    );
-  }
-}
+      <div className="controls">
+        {showIcons && [
+          <i
+            key="icon_1"
+            className="icon-play"
+            aria-hidden="true"
+            onClick={startBtnClick}
+          />,
+          <i
+            key="icon_2"
+            className="icon-pause"
+            aria-hidden="true"
+            onClick={pauseBtnClick}
+          />
+          // <i
+          //   key="icon_3"
+          //   class="icon-spinner"
+          //   aria-hidden="true"
+          //   onClick={resetBtnClick}
+          // />
+        ]}
+        {!showIcons && [
+          <button key="btn_1" onClick={startBtnClick}>
+            Start
+          </button>,
+          <button key="btn_2" onClick={pauseBtnClick}>
+            Pause
+          </button>
+          // <button key="btn_3" onClick={resetBtnClick}>
+          //   Reset
+          // </button>
+        ]}
+      </div>
+    </div>
+  );
+};
 
 StopWatch.propTypes = {
   showIcons: PropTypes.bool, // Showing icons and hide buttons
