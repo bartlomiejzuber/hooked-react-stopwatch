@@ -4,7 +4,7 @@
   <img src="https://github.com/Bajtas/bjts-react-stopwatch/blob/master/images/stopwatch.jpg?raw=true" alt="How component looks"/>
 </p>
 
-React component for simple stopwatch. Very extensible, provides many hooks so you can use it to develop any custom behavior that you desire.
+Very extensible, provides many hooks so you can use them to develop any custom behavior that you desire.
 
 By default, there is simple CSS style used!
 
