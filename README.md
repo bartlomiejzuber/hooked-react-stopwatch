@@ -5,8 +5,7 @@
 </p>
 
 Very extensible, provides many hooks so you can use them to develop any custom behavior that you desire.
-
-By default, there is simple CSS style used!
+Shipped with basic CSS style!
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
