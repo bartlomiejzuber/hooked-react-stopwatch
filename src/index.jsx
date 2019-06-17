@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import StopWatch from "./StopWatch";
+import Stopwatch from "./Stopwatch";
 
 ReactDOM.render(
-  <StopWatch showIcons/>,
+  <Stopwatch showIcons/>,
   document.getElementById('root')
 );
