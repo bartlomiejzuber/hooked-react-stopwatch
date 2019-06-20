@@ -33,12 +33,19 @@ export default App;
 
 ```javascript
 StopWatch.propTypes = {
-    showIcons: PropTypes.bool, // Showing icons and hide buttons
-    hideHours: PropTypes.bool, // Hide hours
-    hideMinutes: PropTypes.bool, // Hide minutes
-    hideSeconds: PropTypes.bool, // Hide seconds
-    hideMilliseconds: PropTypes.bool, // Hide milliseconds
-    separators: PropTypes.ArrayOf(PropTypes.string) // Separators to use between hours/minutes/seconds/milliseconds
-    // separator use example: [":"/*separatorBetweenHoursAndMinutes*/, ":"/*separatorBetweenMinutesAndSeconds*/, "."/*separatorBetweenSecondsAndMilliseconds*/]
+  // custom classNames
+  stopwatchClassName: PropTypes.string,
+  timeContainerClassName: PropTypes.string,
+  controlsClassName: PropTypes.string,
+  playIconClassName: PropTypes.string,
+  pauseIconClassName: PropTypes.string,
+  resetIconClassName: PropTypes.string,
+  renderControls: PropTypes.element, // custom render function for controls section
+  hideHours: PropTypes.bool, // hide hours
+  hideMinutes: PropTypes.bool, // hide minutes
+  hideSeconds: PropTypes.bool, // hide seconds
+  hideMilliseconds: PropTypes.bool, // hide milliseconds
+  separators: PropTypes.arrayOf(PropTypes.string) // separators to use between hours/minutes/seconds/milliseconds
+  // separator use example: [":"/*separatorBetweenHoursAndMinutes*/, ":"/*separatorBetweenMinutesAndSeconds*/, "."/*separatorBetweenSecondsAndMilliseconds*/]
 };
 ```
