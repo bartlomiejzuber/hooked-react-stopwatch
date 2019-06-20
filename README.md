@@ -9,9 +9,7 @@ Shipped with basic CSS style!
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-## How to use
-
-### simple use
+## Usage
 
 ```javascript
 import React, { Component } from 'react';
