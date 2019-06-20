@@ -31,3 +31,4 @@ TimePart.propTypes = {
 };
 
 export default React.memo(TimePart);
+export { defaultSeparator, defaultSeparatorClassName, defaultTimeClassName };

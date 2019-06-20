@@ -17,10 +17,7 @@ function handleZerosPadding(timeUnit, timeValue) {
       else if (timeValue <= 999) convertedTimeValue = timeValue;
       break;
     default:
-      console.error(
-        `Provided time unit: ${timeUnit} coudln not be recognized as valid unit.`
-      );
-      break;
+      throw new Error(`Provided time unit: ${timeUnit} could not be recognized as valid unit.`);
   }
 
   return convertedTimeValue;
