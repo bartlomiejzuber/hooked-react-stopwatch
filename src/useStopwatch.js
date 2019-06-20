@@ -17,7 +17,7 @@ const defaultState = {
   milliseconds: 0,
   pauseOffset: 0,
 };
-export function useStopwatch(initialState = defaultState, throttling = 50) {
+export function useStopwatch(initialState = defaultState, throttling = 70) {
   // State
   const [time, setTime] = useState(initialState);
   const intervalHandle = useRef({ timer: null });
