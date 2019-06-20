@@ -31,11 +31,14 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
-  "author": "",
-  "homepage": "",
+  "author": "Bart Zuber",
+  "homepage": "https://bartlomiejzuber.github.io/react-stopwatch/",
   "license": "MIT",
-  "repository": "",
+  "repository": "https://github.com/bartlomiejzuber/react-stopwatch",
   "keywords": [
-    "react-component"
+    "react-component",
+    "stopwatch",
+    "timer",
+    "component"
   ]
 }
