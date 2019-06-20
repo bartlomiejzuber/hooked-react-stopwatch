@@ -19,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Stopwatch showIcons />
+        <Stopwatch />
       </div>
     );
   }
