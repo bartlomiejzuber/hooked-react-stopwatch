@@ -1,0 +1,40 @@
+[class^="icon-"],
+[class*=" icon-"] {
+  font-size: 1.25em;
+}
+
+.stopwatch {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stopwatch .time {
+  font-size: 1.5rem;
+  line-height: 2em;
+  padding: 0 3em;
+  background: #222;
+  color: #eee;
+  text-align: center;
+  border-radius: 1em;
+}
+
+.time > span {
+  color: white;
+  display: inline;
+}
+
+.stopwatch .controls {
+  margin-top: 1em;
+}
+
+.stopwatch .controls > svg {
+  padding: 0 0.3em;
+  cursor: pointer;
+}
+
+.stopwatch .controls > svg:hover {
+  color: #31302d;
+}
