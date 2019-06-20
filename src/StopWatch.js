@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { useStopwatch } from "./useStopwatch";
 import TimePart from "./TimePart";
 import StopwatchControls from "./StopwatchControls";
-import "./style.css";
 import { timeUnits } from "./utils";
 
 const [hours, minutes, seconds, milliseconds] = timeUnits;

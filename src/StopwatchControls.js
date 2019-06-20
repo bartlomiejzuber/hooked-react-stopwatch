@@ -11,11 +11,11 @@ const StopwatchControls = ({
   pauseHandler,
   resetHandler
 }) => (
-  <>
+  <React.Fragment>
     <OptimizedIcon Icon={FaPlay} className={playIconClassName} onClick={startHandler} />
     <OptimizedIcon Icon={FaPause} className={pauseIconClassName} onClick={pauseHandler} />
     <OptimizedIcon Icon={FaReply} className={resetIconClassName} onClick={resetHandler} />
-  </>
+  </React.Fragment>
 );
 
 StopwatchControls.propTypes = {
