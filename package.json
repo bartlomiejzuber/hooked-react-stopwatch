@@ -20,7 +20,8 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "react-icons": "^3.7.0"
   },
   "peerDependencies": {
     "react": "16.x"
