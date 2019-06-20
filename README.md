@@ -4,7 +4,7 @@
   <img src="https://github.com/Bajtas/bjts-react-stopwatch/blob/master/images/stopwatch.jpg?raw=true" alt="How component looks"/>
 </p>
 
-Very extensible, provides many hooks so you can use them to develop any custom behavior that you desire.
+Highly extensible, created without single `class` used but with pure :heart: to Hooks API.
 Shipped with basic CSS style!
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
