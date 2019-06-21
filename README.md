@@ -1,7 +1,8 @@
 ## hooked-react-stopwatch
 
+![License](https://img.shields.io/npm/l/hooked-react-stopwatch.svg)
+[![Build Status](https://travis-ci.org/bartlomiejzuber/hooked-react-stopwatch.svg?branch=master)](https://travis-ci.org/bartlomiejzuber/hooked-react-stopwatch)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/687ea567-73f1-43ad-98c8-18c33994a609/deploy-status)](https://app.netlify.com/sites/hooked-react-stopwatch/deploys)
-
 <p align="center">
   <img src="https://github.com/Bajtas/bjts-react-stopwatch/blob/master/images/stopwatch.jpg?raw=true" alt="How component looks"/>
 </p>
