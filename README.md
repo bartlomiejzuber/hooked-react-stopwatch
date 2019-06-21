@@ -13,7 +13,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ```javascript
 import React, { Component } from 'react';
-import StopWatch from './StopWatch';
+import { Stopwatch } from "hooked-react-stopwatch";
+import "hooked-react-stopwatch/css/style.css"; // optional
 
 class App extends Component {
   render() {
