@@ -9,7 +9,8 @@
 Highly extensible, created without single `class` used but with pure :heart: to Hooks API.
 Shipped with basic CSS style!
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+[DEMO](https://hooked-react-stopwatch.netlify.com/)
+
 
 ## Installation
 
@@ -66,3 +67,8 @@ StopWatch.propTypes = {
   // separator use example: [":"/*separatorBetweenHoursAndMinutes*/, ":"/*separatorBetweenMinutesAndSeconds*/, "."/*separatorBetweenSecondsAndMilliseconds*/]
 };
 ```
+
+License:
+--------
+
+Made with :sparkling_heart: by [Bartlomiej Zuber](bartlomiej.zuber@outlook.com) while traveling around the world, and licensed under the [MIT License](LICENSE)
