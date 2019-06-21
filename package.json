@@ -1,5 +1,5 @@
 {
-  "name": "hooked-react-stopwatch",
+  "name": "hooked2-react-stopwatch",
   "version": "1.4.3",
   "description": "Lightweight stopwatch component built with React Hooks API",
   "main": "lib/index.js",
@@ -20,6 +20,7 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
+    "hooked-react-stopwatch": "^1.4.2",
     "moment": "^2.24.0",
     "react-icons": "^3.7.0"
   },

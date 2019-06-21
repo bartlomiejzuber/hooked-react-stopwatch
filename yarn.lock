@@ -3871,6 +3871,14 @@ home-or-tmp@^2.0.0:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.1"
 
+hooked-react-stopwatch@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/hooked-react-stopwatch/-/hooked-react-stopwatch-1.4.2.tgz#63230452968723ba8fc7a1e29eb5a89d30936f00"
+  integrity sha512-SfhI7hjhM5/SKbs545VEiRDeMJb5TJ4w8hizVwCZ1Vk5hUyVY23NJ0sXnos0uozEYqmZiFjyA/pZRnoN4IBy3Q==
+  dependencies:
+    moment "^2.24.0"
+    react-icons "^3.7.0"
+
 hosted-git-info@^2.1.4:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.7.1.tgz#97f236977bd6e125408930ff6de3eec6281ec047"
