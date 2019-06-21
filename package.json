@@ -32,9 +32,9 @@
     "react-dom": "^16.8.6"
   },
   "author": "Bart Zuber",
-  "homepage": "https://bartlomiejzuber.github.io/react-stopwatch/",
+  "homepage": "https://bartlomiejzuber.github.io/hooked-react-stopwatch/",
   "license": "MIT",
-  "repository": "https://github.com/bartlomiejzuber/react-stopwatch",
+  "repository": "https://github.com/bartlomiejzuber/hooked-react-stopwatch",
   "keywords": [
     "hooks",
     "lightweight",
