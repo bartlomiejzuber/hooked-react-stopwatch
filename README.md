@@ -1,4 +1,4 @@
-## react-stopwatch
+## hooked-react-stopwatch
 
 <p align="center">
   <img src="https://github.com/Bajtas/bjts-react-stopwatch/blob/master/images/stopwatch.jpg?raw=true" alt="How component looks"/>
