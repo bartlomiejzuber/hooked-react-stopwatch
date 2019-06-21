@@ -1,6 +1,6 @@
 {
   "name": "hooked-react-stopwatch",
-  "version": "1.4.4",
+  "version": "1.4.6",
   "description": "Lightweight stopwatch component built with React Hooks API",
   "main": "lib/index.js",
   "module": "es/index.js",
