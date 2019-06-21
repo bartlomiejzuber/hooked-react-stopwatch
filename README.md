@@ -9,6 +9,20 @@ Shipped with basic CSS style!
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+## Installation
+
+```sh
+npm i hooked-react-stopwatch --save
+```
+
+Alternatively you may use `yarn`:
+
+```sh
+yarn add hooked-react-stopwatch
+```
+Link to npm:
+https://www.npmjs.com/package/hooked-react-stopwatch
+
 ## Usage
 
 ```javascript

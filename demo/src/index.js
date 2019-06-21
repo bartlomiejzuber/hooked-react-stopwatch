@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 
 import { Stopwatch } from "../../src";
-import "../../src/style.css";
+import "../../css/style.css";
 
 class Demo extends Component {
   render() {
