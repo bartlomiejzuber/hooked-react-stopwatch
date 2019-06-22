@@ -6,7 +6,7 @@ const OptimizedIcon = ({ Icon, className, onClick }) => (
 );
 
 OptimizedIcon.propTypes = {
-  Icon: PropTypes.func,
+  Icon: PropTypes.func.isRequired,
   className: PropTypes.string,
   onClick: PropTypes.func
 };
