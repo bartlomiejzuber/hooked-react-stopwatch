@@ -27,7 +27,7 @@ yarn add hooked-react-stopwatch
 ```
 
 Link to npm:
-https://www.npmjs.com/package/hooked-react-stopwatch
+[https://www.npmjs.com/package/hooked-react-stopwatch](https://www.npmjs.com/package/hooked-react-stopwatch)
 
 ## Usage
 
@@ -60,7 +60,7 @@ StopWatch.propTypes = {
   playIconClassName: PropTypes.string,
   pauseIconClassName: PropTypes.string,
   resetIconClassName: PropTypes.string,
-  renderControls: PropTypes.element, // custom render function for controls section
+  renderControls: PropTypes.func, // custom render function for controls section
   hideHours: PropTypes.bool, // hide hours
   hideMinutes: PropTypes.bool, // hide minutes
   hideSeconds: PropTypes.bool, // hide seconds
@@ -73,4 +73,4 @@ StopWatch.propTypes = {
 License:
 --------
 
-Made with :sparkling_heart: by [Bartlomiej Zuber](bartlomiej.zuber@outlook.com) while traveling around the world, and licensed under the [MIT License](LICENSE)
+Made with :sparkling_heart: by [Bartlomiej Zuber (bartlomiej.zuber@outlook.com)](mailto:bartlomiej.zuber@outlook.com) while traveling around the world, and licensed under the [MIT License](LICENSE)
