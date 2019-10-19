@@ -76,7 +76,7 @@ StopWatch.propTypes = {
   playIconClassName: PropTypes.string,
   pauseIconClassName: PropTypes.string,
   resetIconClassName: PropTypes.string,
-  renderControls: PropTypes.element, // custom render function for controls section
+  renderControls: PropTypes.func, // custom render function for controls section
   hideHours: PropTypes.bool, // hide hours
   hideMinutes: PropTypes.bool, // hide minutes
   hideSeconds: PropTypes.bool, // hide seconds
