@@ -1,4 +1,10 @@
-/images
-/public
-/src
-/demo
+images
+demo
+node_modules
+tests
+src
+_config.yml
+.travis.yml
+nwb.config.js
+CONTRIBUTING.md
+README.md
