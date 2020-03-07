@@ -5,10 +5,10 @@ node_js:
   - 8
 
 before_install:
-  - npm install codecov.io coveralls
+  - yarn add codecov.io coveralls
 
 script:
-  - npm run test:coverage
+  - yarn test:coverage
 
 after_success:
   - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
